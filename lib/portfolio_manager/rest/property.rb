@@ -27,6 +27,19 @@ module PortfolioManager
       def property(property_id)
         perform_get_request("/property/#{property_id}")
       end
+
+      ##
+      # This web service creates a property for a specific Portfolio Manager
+      # user based on the information provided in the XML request and
+      # establishes all of the necessary sharing permissions between you and the
+      # Portfolio Manager user. It returns the unique identifier to the newly
+      # created property and a link to the corresponding web service to
+      # retrieve it.
+      #
+      # @see https://portfoliomanager.energystar.gov/webservices/home/api/property/property/post
+      def create_property(account_id, post_data)
+        perform_post_request("/account/#{account_id}/property", body: post_data)
+      end
     end
   end
 end

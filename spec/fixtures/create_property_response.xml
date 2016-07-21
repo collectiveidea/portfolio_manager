@@ -1,0 +1,7 @@
+<response status="Ok">
+    <id>5000036</id>
+    <links>
+        <link httpMethod="GET" link="/property/5000036"
+              linkDescription="This is the GET url for this Property."/>
+    </links>
+</response>

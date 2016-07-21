@@ -38,7 +38,7 @@ module PortfolioManager
       ##
       # @return [String]
       def response_body
-        @conn.public_send(request_method, api_environment + path).body
+        @conn.public_send(request_method, api_environment + path, options[:body]).body
       end
 
       def setup_client
@@ -49,6 +49,7 @@ module PortfolioManager
 
       def set_header
         @conn.header[:user_agent] = 'Ruby PortfolioManager API Client'
+        @conn.header[:content_type] = "application/xml" if request_method == :post
         options[:header].each do |key, value|
           @conn.header[key] = value
         end unless options[:header].nil?
