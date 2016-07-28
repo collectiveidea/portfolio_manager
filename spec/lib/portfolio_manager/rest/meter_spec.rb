@@ -54,4 +54,35 @@ describe PortfolioManager::REST::Meter do
       expect(new_meter['response']['id']).to eq("432")
     end
   end
+
+  describe "#create_meter_consumption_data" do
+    let(:meter_id) { 500 }
+
+    before do
+      stub_post("/meter/#{meter_id}/consumptionData")
+        .with(
+          body: File.read(fixture_path + "/create_consumption_data_request.xml"),
+          headers: {
+            'Accept'=>'*/*',
+            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'Authorization'=>'Basic dXNlcjpwYXNz',
+            'Content-Length'=>'339',
+            'User-Agent'=>'Ruby PortfolioManager API Client',
+            'Content-Type'=>'application/xml'
+          }
+        )
+        .to_return(body: fixture("/create_consumption_data_response.xml"))
+    end
+
+    it "creates consumption data for a meter and returns an the data with ids" do
+      post_data = File.read(fixture_path + "/create_consumption_data_request.xml")
+      consumption_data = client.create_meter_consumption_data(meter_id, post_data)
+
+      expect(consumption_data['meterData']['meterConsumption'].first['usage']).to eq("639573")
+      consumption_data['meterData']['meterConsumption'].each do |c|
+        expect(c).to include('id')
+      end
+    end
+  end
+
 end

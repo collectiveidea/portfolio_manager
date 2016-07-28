@@ -63,6 +63,21 @@ module PortfolioManager
       def create_meter(property_id, post_data)
         perform_post_request("/property/#{property_id}/meter", body: post_data)
       end
+
+      ##
+      # This web service adds consumption data to a specific meter based on the
+      # information provided in the XML request. It returns the unique
+      # identifier to each consumption data entry and a link to the
+      # corresponding web service to retrieve it. The meter must already be
+      # shared with you and you must have write access to the meter. This web
+      # service supports all meter types (i.e., electric, natural gas, water,
+      # IT, etc.). Green power information can also be added for renewable
+      # energy meter types. A maximum of 120 consumption records is allowed.
+      #
+      # @see https://portfoliomanager.energystar.gov/webservices/home/api/meter/consumptionData/post
+      def create_meter_consumption_data(meter_id, post_data)
+        perform_post_request("/meter/#{meter_id}/consumptionData", body: post_data)
+      end
     end
   end
 end

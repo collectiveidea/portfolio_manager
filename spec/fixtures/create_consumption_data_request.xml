@@ -1,0 +1,12 @@
+<meterData>
+    <meterConsumption>
+        <usage>639573</usage>
+        <startDate>2011-01-01</startDate>
+        <endDate>2011-01-31</endDate>
+    </meterConsumption>
+    <meterConsumption>
+        <usage>613123</usage>
+        <startDate>2011-02-01</startDate>
+        <endDate>2011-02-28</endDate>
+    </meterConsumption>
+</meterData>
