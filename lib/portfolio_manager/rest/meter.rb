@@ -50,7 +50,19 @@ module PortfolioManager
         )
       end
 
-
+      ##
+      # This web service creates a meter for a specific property based on the
+      # information provided in the XML request and establishes all of the
+      # necessary meter sharing permissions between you and the Portfolio
+      # Manager user. It returns the unique identifier to the newly created
+      # meter and a link to the corresponding web service to retrieve it.
+      # The property must already be shared with you and you must have write
+      # access to the property.
+      #
+      # @see https://portfoliomanager.energystar.gov/webservices/home/api/meter/meter/post
+      def create_meter(property_id, post_data)
+        perform_post_request("/property/#{property_id}/meter", body: post_data)
+      end
     end
   end
 end

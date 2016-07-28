@@ -1,0 +1,7 @@
+<response status="Ok">
+    <id>432</id>
+    <links>
+        <link httpMethod="GET" link="/meter/432"
+              linkDescription="This is the GET url for this Meter."/>
+    </links>
+</response>
