@@ -40,6 +40,20 @@ module PortfolioManager
       def create_property(account_id, post_data)
         perform_post_request("/account/#{account_id}/property", body: post_data)
       end
+
+      ##
+      # This web service creates a property use under a specified property
+      # based on the information provided in the XML request. It returns the
+      # unique identifier to the newly created property use and a link to the
+      # corresponding web service to retrieve it. To specify the use of default
+      # values, just omit the "value" XML tag for that particular use detail
+      # information from the XML request or omit the entire reference to the
+      # particular use detail information from the XML request altogether.
+      #
+      # @see https://portfoliomanager.energystar.gov/webservices/home/api/propertyUse/propertyUse/post
+      def create_property_use(property_id, post_data)
+        perform_post_request("/property/#{property_id}/propertyUse", body: post_data)
+      end
     end
   end
 end

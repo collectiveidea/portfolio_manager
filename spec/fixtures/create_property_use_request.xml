@@ -1,0 +1,32 @@
+<k12School>
+    <name>Broadway K-12 School</name>
+    <useDetails>
+        <totalGrossFloorArea units="Square Feet" currentAsOf="2010-08-13" temporary="false">
+            <value>333</value>
+        </totalGrossFloorArea>
+        <openOnWeekends currentAsOf="2010-08-13" temporary="false">
+            <value>Yes</value>
+        </openOnWeekends>
+        <percentCooled currentAsOf="2010-08-13" temporary="false">
+            <value>0</value>
+        </percentCooled>
+        <percentHeated currentAsOf="2010-08-13" temporary="false">
+            <value>0</value>
+        </percentHeated>
+        <numberOfComputers currentAsOf="2010-08-13" temporary="false">
+            <value>3</value>
+        </numberOfComputers>
+        <cookingFacilities currentAsOf="2010-08-13" temporary="false">
+            <value>Yes</value>
+        </cookingFacilities>
+        <isHighSchool currentAsOf="2010-08-13" temporary="false">
+            <value>Yes</value>
+        </isHighSchool>
+        <monthsInUse currentAsOf="2010-08-13" temporary="false">
+            <value>8</value>
+        </monthsInUse>
+        <schoolDistrict currentAsOf="2010-08-13" temporary="false">
+            <value>String</value>
+        </schoolDistrict>
+    </useDetails>
+</k12School>
